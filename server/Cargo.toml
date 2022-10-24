@@ -1,0 +1,13 @@
+[package]
+name = "server"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[dependencies]
+axum = { workspace = true }
+include_dir = { workspace = true }
+mime_guess = { workspace = true }
+tokio = { workspace = true }
+
+client = { path = "../client" }

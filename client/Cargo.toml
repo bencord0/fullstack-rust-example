@@ -1,0 +1,12 @@
+[package]
+name = "client"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[lib]
+crate-type = ["rlib", "cdylib"]
+
+[dependencies]
+wasm-bindgen = { workspace = true }
+yew = { workspace = true }
