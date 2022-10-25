@@ -4,7 +4,8 @@ This example combines a [Yew](https://yew.rs) frontend, and an [Axum](https://do
 
 ## Setup
 
-    $ cargo install wasm-pack
+    $ rustup target add wasm32-unknown-unknown
+    $ cargo install wasm-bindgen-cli
 
 ## Compile
 
