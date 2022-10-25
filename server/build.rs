@@ -20,7 +20,7 @@ fn main() {
     let out_dir = env::var("OUT_DIR").unwrap();
     let wasm_target = Path::new(&out_dir).join("wasm-target");
 
-    remove_dir_all(&wasm_target).unwrap();
+    let _ = remove_dir_all(&wasm_target);
     let output = Command::new(cargo)
         .current_dir(client_dir.canonicalize().unwrap())
         .args(&[
@@ -39,7 +39,7 @@ fn main() {
     // wasm-bindgen
     let client_wasm = wasm_target.join("wasm32-unknown-unknown/release/client.wasm");
     let client_pkg = Path::new(&out_dir).join("pkg");
-    remove_dir_all(&client_pkg).unwrap();
+    let _ = remove_dir_all(&client_pkg);
     let output = Command::new("wasm-bindgen")
         .args(&[
             "--target", "web",
