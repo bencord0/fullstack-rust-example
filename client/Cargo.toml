@@ -5,8 +5,22 @@ authors.workspace = true
 edition.workspace = true
 
 [lib]
+doctest = false
 crate-type = ["rlib", "cdylib"]
 
-[dependencies]
+[target.'cfg(target_arch = "wasm32")'.dependencies]
 wasm-bindgen = { workspace = true }
 yew = { workspace = true }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+include_dir = { workspace = true }
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+web-sys = { workspace = true, features = [
+    "Window",
+    "Document",
+    "Element",
+]}
+wasm-bindgen-test = { workspace = true }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]

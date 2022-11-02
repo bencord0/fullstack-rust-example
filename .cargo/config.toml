@@ -1,0 +1,8 @@
+[alias]
+runserver = "run -p server --target x86_64-unknown-linux-gnu"
+
+[build]
+target = ["x86_64-unknown-linux-gnu", "wasm32-unknown-unknown"]
+
+[target.wasm32-unknown-unknown]
+runner = "wasm-bindgen-test-runner"

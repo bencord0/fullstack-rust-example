@@ -5,7 +5,7 @@ This example combines a [Yew](https://yew.rs) frontend, and an [Axum](https://do
 ## Setup
 
     $ rustup target add wasm32-unknown-unknown
-    $ cargo install wasm-bindgen-cli
+    $ cargo install wasm-bindgen-cli webassembly-test-runner
 
 ## Compile
 
@@ -13,4 +13,8 @@ This example combines a [Yew](https://yew.rs) frontend, and an [Axum](https://do
 
 ## Run
 
-    $ cargo run
+    $ cargo runserver
+
+## Test
+
+    $ cargo test
